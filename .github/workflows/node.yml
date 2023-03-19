@@ -8,7 +8,7 @@ jobs:
   build:
     env: 
       CI: true
-      MONGO_URI: mongodb+srv://Gboyega:82961@cluster0.yczqudr.mongodb.net/nasa?retryWrites=true&w=majority
+      MONGO_URI: mongodb://localhost/NASA-API
     strategy: 
       matrix: 
         node-version: [14.x, 16.x]
@@ -26,5 +26,4 @@ jobs:
           mongodb-version: ${{ matrix.mongodb-version }}
       - run: npm install
       - run: npm run build --prefix client
-      - run: $MONGO_URI
       - run: npm test
