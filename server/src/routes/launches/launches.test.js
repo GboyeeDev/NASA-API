@@ -2,6 +2,7 @@ const request = require('supertest');
 const app = require('../../app');
 const { mongoConnect, mongoDisconnect } = require('../../services/mongo');
 const { loadPlanetsData, } = require('../../models/planets.model')
+require('dotenv').config();
 
 
 // launches api is nested test for our get and post endpoints.
