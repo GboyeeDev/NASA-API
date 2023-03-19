@@ -1,6 +1,7 @@
 const request = require('supertest');
 const app = require('../../app');
 const { mongoConnect, mongoDisconnect } = require('../../services/mongo');
+const { loadPlanetsData, } = require('../../models/planets.model')
 
 
 // launches api is nested test for our get and post endpoints.
@@ -9,6 +10,7 @@ describe('Launches API', () => {
     //beforeall will load first before the endpoint test kickstart
     beforeAll(async () => {
         await mongoConnect();
+        await loadPlanetsData;
         await new Promise(resolve => setTimeout(() => resolve(), 1000));
     });
 
