@@ -11,7 +11,7 @@ describe('Launches API', () => {
     beforeAll(async () => {
         await mongoConnect();
         await loadPlanetsData();
-        //await new Promise(resolve => setTimeout(() => resolve(), 1000));
+        await new Promise(resolve => setTimeout(() => resolve(), 1000));
     });
 
     afterAll(async () => {
