@@ -10,7 +10,7 @@ describe('Launches API', () => {
     //beforeall will load first before the endpoint test kickstart
     beforeAll(async () => {
         await mongoConnect();
-        //await loadPlanetsData();
+        await loadPlanetsData();
         await new Promise(resolve => setTimeout(() => resolve(), 1000));
     });
 
